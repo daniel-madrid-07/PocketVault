@@ -6,7 +6,7 @@
 
 [**Live demo →**](https://pocketvault.space)
 
-![PocketVault sign-in screen](docs/screenshots/login.png)
+![PocketVault dashboard: upload area and file library](docs/screenshots/dashboard.png)
 
 </div>
 
@@ -23,6 +23,8 @@ PocketVault is a web application for storing and sharing files, built on Firebas
 - Per-user differentiated quotas
 - Automatic deletion of expired files
 - Modern interface with a custom cursor
+
+![PocketVault sign-in screen](docs/screenshots/login.png)
 
 ## Installation / Usage
 
