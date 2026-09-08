@@ -1,71 +1,90 @@
+<div align="center">
+
 # PocketVault
 
-Una aplicación web moderna para gestionar y compartir archivos con Firebase.
+**A modern web app for managing and sharing files with Firebase.**
 
-## 🚀 Características
+[**Live demo →**](https://pocketvault.space)
 
-- Autenticación con Google
-- Almacenamiento seguro de archivos
-- Cuotas diferenciadas por usuario
-- Eliminación automática de archivos expirados
-- Interfaz moderna con cursor personalizado
+</div>
 
-## ⚙️ Configuración
+---
 
-### Requisitos previos
+## What it does
 
-- Cuenta de Firebase
-- Node.js (para desarrollo local)
+PocketVault is a web application for storing and sharing files, built on Firebase. It authenticates users with Google, applies per-user storage quotas, and automatically removes files after they expire.
 
-### Pasos de instalación
+## Features
 
-1. **Clonar el repositorio**
+- Google authentication
+- Secure file storage
+- Per-user differentiated quotas
+- Automatic deletion of expired files
+- Modern interface with a custom cursor
+
+## Installation / Usage
+
+### Prerequisites
+
+- A Firebase account
+- Node.js (for local development)
+
+### Installation steps
+
+1. **Clone the repository**
    ```bash
    git clone https://github.com/danielmadridg/PocketVault.git
    cd PocketVault
    ```
 
-2. **Configurar Firebase**
-   - Copia `firebase-config.example.js` a `firebase-config.js`
-   - Edita `firebase-config.js` con tus credenciales de Firebase:
-     - Ve a [Firebase Console](https://console.firebase.google.com)
-     - Selecciona tu proyecto
-     - Ve a **Configuración del proyecto** > **Tus apps**
-     - Copia la configuración en el objeto `FIREBASE_CONFIG`
+2. **Configure Firebase**
+   - Copy `firebase-config.example.js` to `firebase-config.js`
+   - Edit `firebase-config.js` with your Firebase credentials:
+     - Go to [Firebase Console](https://console.firebase.google.com)
+     - Select your project
+     - Go to **Project Settings** > **Your apps**
+     - Copy the configuration into the `FIREBASE_CONFIG` object
 
-3. **Crear `.firebaserc`**
+3. **Create `.firebaserc`**
    ```json
    {
      "projects": {
-       "default": "tu-project-id"
+       "default": "your-project-id"
      }
    }
    ```
 
-4. **Desplegar con Firebase**
+4. **Deploy with Firebase**
    ```bash
    npm install -g firebase-tools
    firebase login
    firebase deploy
    ```
 
-## 📝 Configuración personalizable
+### Customizable configuration
 
-En `app.js`, puedes ajustar:
+In `app.js`, you can adjust:
 
-- `EXPIRY_DAYS`: Días antes de que los archivos se eliminen automáticamente (default: 7)
-- `MAX_FILE_MB`: Tamaño máximo por archivo en MB (default: 100)
-- `OWNER_EMAIL`: Email del propietario (para cuota especial)
-- `OWNER_QUOTA_MB`: Cuota del propietario en MB (default: 4500)
-- `GUEST_QUOTA_MB`: Cuota de otros usuarios en MB (default: 200)
-- `SECRET_PASSWORD_HASH`: Hash SHA256 de la contraseña para la sección oculta
+- `EXPIRY_DAYS`: Days before files are automatically deleted (default: 7)
+- `MAX_FILE_MB`: Maximum size per file in MB (default: 100)
+- `OWNER_EMAIL`: Owner's email (for the special quota)
+- `OWNER_QUOTA_MB`: Owner's quota in MB (default: 4500)
+- `GUEST_QUOTA_MB`: Quota for other users in MB (default: 200)
+- `SECRET_PASSWORD_HASH`: SHA256 hash of the password for the hidden section
 
-## 🔒 Seguridad
+### Security
 
-- Las credenciales de Firebase (`app.js` y `.firebaserc`) están excluidas del repositorio
-- Crea estos archivos localmente con tus credenciales
-- **Nunca hagas commit de datos sensibles**
+- Firebase credentials (`app.js` and `.firebaserc`) are excluded from the repository
+- Create these files locally with your own credentials
+- **Never commit sensitive data**
 
-## 📄 Licencia
+## Tech stack
 
-Proyecto personal.
+- Firebase (Authentication, Hosting, Firestore, Storage)
+- Node.js / firebase-tools (deployment tooling)
+- HTML, CSS, JavaScript (app.js, index.html, styles.css)
+- GitHub Actions (Firebase Hosting deployment on push to `main`)
+
+## License
+
+See [LICENSE](LICENSE).
