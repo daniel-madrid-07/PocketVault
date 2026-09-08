@@ -6,6 +6,8 @@
 
 [**Live demo →**](https://pocketvault.space)
 
+![PocketVault sign-in screen](docs/screenshots/login.png)
+
 </div>
 
 ---
